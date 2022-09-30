@@ -7,7 +7,7 @@ pygame.init()
 screen = pygame.display.set_mode([500, 500])
 
 
-details_font = pygame.font.SysFont("Arial", 20, True)
+details_font = pygame.font.SysFont("Arial", 16, True)
 
 def draw():
     screen.fill([0, 0, 0])
@@ -22,14 +22,14 @@ def draw():
 def draw_details():
     details = [
         "E: скрыть/показать детали",
-        "Шариков в секунду: " + str(model.balls_per_second),
-        "Шариков на экране:" + str(len(model.balls))
+        "Шариков в секунду: " + str(model.balls_per_second) + " ВВЕРХ: увел, ВНИЗ: уменьш",
+        "Шариков на экране:" + str(len(model.balls))+" DEL: очистить",
+        " ",
+        "Режимы: 1-стоп, 2-свободный полет, 3-падение"
     ]
 
     y = 10
     for det in details:
         t = details_font.render(det, True, [255, 74, 34])
-        t=t.convert_alpha()
-        t.set_alpha(50)
         y+=20
         screen.blit(t, [10, y])
