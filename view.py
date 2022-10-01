@@ -31,6 +31,8 @@ def draw_details():
 
     y = 10
     for det in details:
-        t = details_font.render(det, True, [255, 74, 34])
+        t = details_font.render(det, True, [255, 74, 34], [250, 250, 250])
+        t=t.convert_alpha()
+        t.set_alpha(180)
         y+=20
         screen.blit(t, [10, y])
