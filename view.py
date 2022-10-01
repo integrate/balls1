@@ -11,11 +11,12 @@ details_font = pygame.font.SysFont("Arial", 16, True)
 
 def draw():
     screen.fill([0, 0, 0])
-    if model.mode_details:
-        draw_details()
 
     for ball in model.balls:
         pygame.draw.circle(screen, ball["color"], [ball["x"], ball["y"]], ball["radius"])
+
+    if model.mode_details:
+        draw_details()
 
     pygame.display.flip()
 

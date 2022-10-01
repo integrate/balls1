@@ -5,6 +5,8 @@ import model
 BALL_ADD_TIMER = pygame.event.custom_type()
 pygame.time.set_timer(BALL_ADD_TIMER, 10, 1)
 
+pygame.key.set_repeat(100)
+
 def control():
     events = pygame.event.get()
     for e in events:
